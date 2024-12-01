@@ -1,8 +1,8 @@
-// for (let i = 0; i <= 10; i+=1) {
-//    console.log(i)
-    
-// }
-
+let fi = 0;
+while (fi <10) {
+  fi= fi + 1
+  console.log(fi);
+}
 
 
 // for (let i = 0; i < 20; i+=1) {
@@ -38,11 +38,11 @@
 
 
 
-for (let i = 0; i <= 20; i+=1) {
-    if (i % 3 === 0) {
-        continue
-    } else {
-      console.log(i);  
-    }
+// for (let i = 0; i <= 20; i+=1) {
+//     if (i % 3 === 0) {
+//         continue
+//     } else {
+//       console.log(i);  
+//     }
     
-}
+// }
