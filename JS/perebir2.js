@@ -125,3 +125,44 @@ const getInactiveUsers = users => {
     return users.filter(user => !user.isActive);
 };
 console.log(getInactiveUsers(users)); // [об'єкт Moore Hensley, об'єкт Ross Vazquez, об'єкт Blackburn Dotson]
+
+
+
+
+
+// Завдання 5
+// Отримати користувача (не масив) по email (поле email, він унікальний).
+const getUserWithEmail = (users, email) => {
+    return users.find(user => user.email === email);
+};
+
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {об'єкт користувача Sheree Anthony}
+console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
+
+
+
+// Завдання 6
+// Отримати масив користувачів, які потрапляють у вікову категорію від min до max років (поле age).
+const getUsersWithAge = (users, min, max) => {
+    return users.filter(user => user.age > min && user.age < max);
+};
+console.log(getUsersWithAge(users, 20, 30)); // [об'єкт Ross Vazquez, об'єкт Elma Head, об'єкт Carey Barr]
+console.log(getUsersWithAge(users, 30, 40));
+// [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Blackburn Dotson, об'єкт Sheree Anthony]
+
+
+// Завдання 7
+// Отримати загальну суму балансу (поле balance) всіх користувачів.
+const calculateTotalBalance = users => {
+    return users.reduce((acc, user) => acc + user.balance, 0);
+};
+console.log(calculateTotalBalance(users)); // 20916
+
+
+// Завдання 8
+// Масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
+const getUsersWithFriend = (users, friendName) => {
+    return users.filter(user => user.friends.includes(friendName)).map(user => user.name);
+};
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
